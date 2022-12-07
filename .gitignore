@@ -1,0 +1,8 @@
+.gitignore & Swift.gitignore
+
+## User settings
+xcuserdata/
+
+.sync
+]con[
+.DS_Store
