@@ -7,6 +7,7 @@
 
 import UIKit
 import FacebookCore
+import LineSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     application,
                     didFinishLaunchingWithOptions: launchOptions
                 )
+
+        LoginManager.shared.setup(channelID: "1657722996", universalLinkURL: nil)
 
         return true
     }
@@ -39,5 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return LoginManager.shared.application(app, open: url)
+    }
 }
 

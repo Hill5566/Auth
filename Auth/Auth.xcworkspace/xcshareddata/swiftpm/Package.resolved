@@ -8,6 +8,15 @@
         "revision" : "7fd8a930a5b2c940a22efafe0e214ed0df671312",
         "version" : "15.1.0"
       }
+    },
+    {
+      "identity" : "line-sdk-ios-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/line/line-sdk-ios-swift.git",
+      "state" : {
+        "revision" : "4243b779e273c1a02e94856a4841d861db106e1e",
+        "version" : "5.9.0"
+      }
     }
   ],
   "version" : 2
