@@ -14,6 +14,10 @@
 		E9CBFCF32940C3F50039F5BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9CBFCF12940C3F50039F5BF /* Main.storyboard */; };
 		E9CBFCF52940C3F70039F5BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9CBFCF42940C3F70039F5BF /* Assets.xcassets */; };
 		E9CBFCF82940C3F70039F5BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9CBFCF62940C3F70039F5BF /* LaunchScreen.storyboard */; };
+		E9D112572940FACC00837BEE /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = E9D112562940FACC00837BEE /* FacebookBasics */; };
+		E9D112592940FACC00837BEE /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = E9D112582940FACC00837BEE /* FacebookCore */; };
+		E9D1125B2940FACC00837BEE /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = E9D1125A2940FACC00837BEE /* FacebookLogin */; };
+		E9D1125D2940FACC00837BEE /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = E9D1125C2940FACC00837BEE /* FacebookShare */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,7 @@
 		E9CBFCF42940C3F70039F5BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9CBFCF72940C3F70039F5BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9CBFCF92940C3F70039F5BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9F703DB2940CCD90031F79F /* Auth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Auth.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +40,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D1125B2940FACC00837BEE /* FacebookLogin in Frameworks */,
 				D7091B7ECF0F2D14C570BDFF /* Pods_Auth.framework in Frameworks */,
+				E9D112592940FACC00837BEE /* FacebookCore in Frameworks */,
+				E9D1125D2940FACC00837BEE /* FacebookShare in Frameworks */,
+				E9D112572940FACC00837BEE /* FacebookBasics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +57,6 @@
 				9E9C3C940109FF540BC0055B /* Pods-Auth.debug.xcconfig */,
 				BEB22355A91B08D80D3E9318 /* Pods-Auth.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +89,7 @@
 		E9CBFCEA2940C3F50039F5BF /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				E9F703DB2940CCD90031F79F /* Auth.entitlements */,
 				E9CBFCEB2940C3F50039F5BF /* AppDelegate.swift */,
 				E9CBFCED2940C3F50039F5BF /* SceneDelegate.swift */,
 				E9CBFCEF2940C3F50039F5BF /* ViewController.swift */,
@@ -109,6 +118,12 @@
 			dependencies = (
 			);
 			name = Auth;
+			packageProductDependencies = (
+				E9D112562940FACC00837BEE /* FacebookBasics */,
+				E9D112582940FACC00837BEE /* FacebookCore */,
+				E9D1125A2940FACC00837BEE /* FacebookLogin */,
+				E9D1125C2940FACC00837BEE /* FacebookShare */,
+			);
 			productName = Auth;
 			productReference = E9CBFCE82940C3F50039F5BF /* Auth.app */;
 			productType = "com.apple.product-type.application";
@@ -137,6 +152,9 @@
 				Base,
 			);
 			mainGroup = E9CBFCDF2940C3F50039F5BF;
+			packageReferences = (
+				E9D112552940FACC00837BEE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = E9CBFCE92940C3F50039F5BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -337,11 +355,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Auth/Auth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NGZ94TQPT7;
+				DEVELOPMENT_TEAM = XQK4Y7GDM3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Auth/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Auth_Ex;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -354,9 +375,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hilllin.Auth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -366,11 +390,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Auth/Auth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NGZ94TQPT7;
+				DEVELOPMENT_TEAM = XQK4Y7GDM3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Auth/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Auth_Ex;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -383,9 +410,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hilllin.Auth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -411,6 +441,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E9D112552940FACC00837BEE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E9D112562940FACC00837BEE /* FacebookBasics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D112552940FACC00837BEE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookBasics;
+		};
+		E9D112582940FACC00837BEE /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D112552940FACC00837BEE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		E9D1125A2940FACC00837BEE /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D112552940FACC00837BEE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		E9D1125C2940FACC00837BEE /* FacebookShare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9D112552940FACC00837BEE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookShare;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E9CBFCE02940C3F50039F5BF /* Project object */;
 }
