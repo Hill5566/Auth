@@ -8,22 +8,27 @@
 import UIKit
 import FacebookCore
 import LineSDK
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
 
-        ApplicationDelegate.shared.application(
-                    application,
-                    didFinishLaunchingWithOptions: launchOptions
-                )
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         LoginManager.shared.setup(channelID: "1657722996", universalLinkURL: nil)
-
+        
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if error != nil || user == nil {
+                // Show the app's signed-out state.
+            } else {
+                print(user?.profile?.name)
+                print(user?.profile?.email)
+                // Show the app's signed-in state.
+            }
+        }
+        
         return true
     }
 
