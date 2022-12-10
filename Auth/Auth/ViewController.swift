@@ -25,18 +25,17 @@ class ViewController: UIViewController {
         loginButton.center = view.center
         view.addSubview(loginButton)
         
-        if let token = AccessToken.current,
-           !token.isExpired {
+        if let token = AccessToken.current, !token.isExpired {
             // User is logged in, do work such as go to next view controller.
         }
         
         // Extend the code sample from 6a. Add Facebook Login to Your Code
         // Add to your viewDidLoad method:
-        loginButton.permissions = ["public_profile", "email"]
+//        loginButton.permissions = ["public_profile", "email"]
     }
     
     @IBAction func request(_ sender: UIButton) {
-        
+        print("click request")
         if AccessToken.current != nil {
             GraphRequest(graphPath: "me").start { connection, result, error in
                 if let result = result {

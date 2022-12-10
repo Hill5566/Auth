@@ -369,7 +369,7 @@
 				DEVELOPMENT_TEAM = XQK4Y7GDM3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Auth/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Auth_Ex;
+				INFOPLIST_KEY_CFBundleDisplayName = Auths;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -381,7 +381,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hilllin.Auth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hilllin.authexamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -404,7 +404,7 @@
 				DEVELOPMENT_TEAM = XQK4Y7GDM3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Auth/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Auth_Ex;
+				INFOPLIST_KEY_CFBundleDisplayName = Auths;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -416,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hilllin.Auth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hilllin.authexamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

@@ -24,12 +24,15 @@
 	<key>FacebookClientToken</key>
 	<string>1b2e9d6fd5fcd97799c431e24fa188ba</string>
 	<key>FacebookDisplayName</key>
-	<string>Auth</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>fbapi</string>
-		<string>fb-messenger-share-api</string>
-	</array>
+	<string>Auth Examples</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>fbapi</string>
+      <string>fb-messenger-api</string>
+      <string>fbauth2</string>
+      <string>fbshareextension</string>
+    </array>
+    
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
