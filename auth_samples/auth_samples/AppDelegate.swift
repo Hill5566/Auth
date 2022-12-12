@@ -9,6 +9,7 @@ import UIKit
 import FacebookLogin
 import LineSDK
 import AuthenticationServices
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,22 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         LoginManager.shared.setup(channelID: "1657725417", universalLinkURL: nil)
         
-        let appleIDProvider = ASAuthorizationAppleIDProvider()
-        appleIDProvider.getCredentialState(forUserID: KeychainItem.currentUserIdentifier) { (credentialState, error) in
-            switch credentialState {
-            case .authorized:
-                break // The Apple ID credential is valid.
-            case .revoked, .notFound:
-                // The Apple ID credential is either revoked or was not found, so show the sign-in UI.
-                DispatchQueue.main.async {
-                    self.window?.rootViewController?.showLoginViewController()
-                }
-            default:
-                break
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if error != nil || user == nil {
+                // Show the app's signed-out state.
+            } else {
+                print(user?.profile?.name)
+                print(user?.profile?.email)
+                // Show the app's signed-in state.
             }
         }
-        
-        
         
         return true
     }

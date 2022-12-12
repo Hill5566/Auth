@@ -9,6 +9,7 @@ import UIKit
 import FacebookLogin
 import LineSDK
 import AuthenticationServices
+import GoogleSignIn
 
 class ViewController: UIViewController {
     
@@ -208,4 +209,20 @@ extension UIViewController {
         //            self.present(loginViewController, animated: true, completion: nil)
         //        }
     }
+}
+
+// Google sign in
+extension UIViewController {
+    @IBAction func signIn(sender: UIButton) {
+            let signInConfig = GIDConfiguration(clientID: "745768429617-n5cojnr730qore0l41hhh3s7pol4b2oc.apps.googleusercontent.com")
+            
+            GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+                guard error == nil else { return }
+                print(user?.profile?.name)
+                print(user?.profile?.email)
+            }
+        }
+        @IBAction func signOut(sender: UIButton) {
+          GIDSignIn.sharedInstance.signOut()
+        }
 }

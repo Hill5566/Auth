@@ -22,6 +22,17 @@
                                     <constraint firstAttribute="height" constant="60" id="mBd-lT-Aoy"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNS-3u-N8k">
+                                <rect key="frame" x="40" y="592" width="310" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UWS-yS-Yle"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Google Sign In"/>
+                                <connections>
+                                    <action selector="signInSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1uY-aw-ddU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -30,6 +41,9 @@
                             <constraint firstItem="EN4-dv-kPX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="8LR-2z-EdQ"/>
                             <constraint firstItem="EN4-dv-kPX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="PKq-6v-LBO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EN4-dv-kPX" secondAttribute="trailing" constant="40" id="TFg-T5-aWw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PNS-3u-N8k" secondAttribute="trailing" constant="40" id="kqz-E9-svg"/>
+                            <constraint firstItem="PNS-3u-N8k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="tU4-X0-j03"/>
+                            <constraint firstItem="PNS-3u-N8k" firstAttribute="top" secondItem="EN4-dv-kPX" secondAttribute="bottom" constant="40" id="ymP-b0-Zzi"/>
                         </constraints>
                     </view>
                     <connections>
